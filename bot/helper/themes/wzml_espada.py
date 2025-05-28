@@ -140,7 +140,7 @@ class WZMLStyle:
     L_LOG_START = "<b><u>Leech Started :</u></b>\n┃\n <b>User :</b> {mention} ( #ID{uid} )\n <b>Source :</b> <a href='{msg_link}'>Click Here</a>"
 
     # async def onUploadComplete(): ---> tasks_listener.py
-    NAME = "</b>POWERED-BY: @TEAMXPIRATES</b>\n\n"
+    NAME = ""
     SIZE = " <b>Size: </b>{Size}\n"
     ELAPSE = " <b>Elapsed: </b>{Time}\n"
     MODE = ""
@@ -177,19 +177,18 @@ class WZMLStyle:
 
     # def get_readable_message(): ---> bot_utilis.py
     ####--------OVERALL MSG HEADER----------
-    STATUS_NAME = "<b>POWERED-BY: @TEAMXPIRATES</b>"
+    STATUS_NAME = ""
 
-    #####---------PROGRESSIVE STATUS-------
-    BAR = "\n┃ {Bar}"
+    STATUS = '\n<b> {Status}</b>'
+    BAR = "\n {Bar}"
     PROCESSED = "\n <b>Processed: {Processed}</b>"
-    STATUS = '\n <b>Status: {Status}</b>'
+    SPEED = "\n <b>Speed:</b> {Speed}"
     ETA = " | <b>ETA:</b> {Eta}"
-    SPEED = "\n <b>Speed: {Speed}</b>"
-    ELAPSED = " | <b>Elapsed:</b> {Elapsed}"
-    ENGINE = "\n <b>Engine: {Engine}</b> "
-    STA_MODE = "\n <b>Mode: {Mode}</b> "
+    ELAPSED = "\n <b>Elapsed:</b> {Elapsed}"
+    ENGINE = "\n <b>Engine:</b> {Engine}"
     SEEDERS = "\n <b>Seeders:</b> {Seeders} | "
     LEECHERS = "<b>Leechers:</b> {Leechers}"
+    STA_MODE = ""
 
     ####--------SEEDING----------
     SEED_SIZE = "\n <b>Size: </b>{Size}"
@@ -204,19 +203,19 @@ class WZMLStyle:
     NON_ENGINE = "\n <b>Engine: {Engine}</b>"
 
     ####--------OVERALL MSG FOOTER----------
-    USER = "\n <b>User:</b> <code>{User}</code> | "
-    ID = "<b>ID:</b> <code>{Id}</code>"
+    USER = "\n <b>User:</b> {User} | "
+    ID = "<code>{Id}</code>"
     BTSEL = "\n <b>Select:</b> {Btsel}"
     CANCEL = "\n {Cancel}\n\n"
 
     ####------FOOTER--------
-    FOOTER = "♝ <b>Bot Stats</b>\n"
+    FOOTER = ""
     TASKS = " <b>Tasks:</b> {Tasks}\n"
     BOT_TASKS = " <b>Tasks:</b> {Tasks}/{Ttask} | <b>AVL:</b> {Free}\n"
-    Cpu = " <b>CPU: {cpu}% | </b>"
+    Cpu = " <b>CPU:</b> {cpu}% | "
     FREE = "<b>FREE:</b> {free}"
-    Ram = "\n <b>RAM: {ram}% | </b>"
-    uptime = "<b>UPTIME: {uptime}</b>"
+    Ram = "\n <b>RAM:</b> {ram}% |"
+    uptime = "<b>UPTIME:</b> {uptime}"
     DL = ""
     UL = ""
 
