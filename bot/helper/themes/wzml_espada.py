@@ -179,9 +179,9 @@ class WZMLStyle:
     ####--------OVERALL MSG HEADER----------
     STATUS_NAME = ""
 
-    STATUS = '\n <b>{Status}</b>'
+    STATUS = '\n <b>Status:</b> <a href="{Url}">{Status}</a>'
     BAR = "\n {Bar}"
-    PROCESSED = "\n <b>Processed: {Processed}</b>"
+    PROCESSED = "\n <b>Processed:</b> {Processed}"
     SPEED = "\n <b>Speed:</b> {Speed} | "
     ETA = "<b>ETA:</b> {Eta}"
     ELAPSED = "\n <b>Elapsed:</b> {Elapsed}"
