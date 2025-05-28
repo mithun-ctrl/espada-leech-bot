@@ -137,21 +137,21 @@ class WZMLStyle:
 
     # async def __msg_to_reply(self): ---> pyrogramEngine.py
     PM_START = "➲ <b><u>Task Started :</u></b>\n┃\n <b>Link:</b> <a href='{msg_link}'>Click Here</a>"
-    L_LOG_START = "➲ <b><u>Leech Started :</u></b>\n┃\n <b>User :</b> {mention} ( #ID{uid} )\n <b>Source :</b> <a href='{msg_link}'>Click Here</a>"
+    L_LOG_START = "<b><u>Leech Started :</u></b>\n┃\n <b>User :</b> {mention} ( #ID{uid} )\n <b>Source :</b> <a href='{msg_link}'>Click Here</a>"
 
     # async def onUploadComplete(): ---> tasks_listener.py
-    NAME = "<b><i>{Name}</i></b>\n┃\n"
+    NAME = "</b>POWERED-BY: @TEAMXPIRATES</b>\n\n"
     SIZE = " <b>Size: </b>{Size}\n"
     ELAPSE = " <b>Elapsed: </b>{Time}\n"
-    MODE = " <b>Mode: </b>{Mode}\n"
+    MODE = ""
 
     # ----- LEECH -------
     L_TOTAL_FILES = " <b>Total Files: </b>{Files}\n"
     L_CORRUPTED_FILES = " <b>Corrupted Files: </b>{Corrupt}\n"
-    L_CC = " <b>By: </b>{Tag}\n\n"
-    PM_BOT_MSG = "➲ <b><i>File(s) have been Sent above</i></b>"
-    L_BOT_MSG = "➲ <b><i>File(s) have been Sent to Bot PM (Private)</i></b>"
-    L_LL_MSG = "➲ <b><i>File(s) have been Sent. Access via Links...</i></b>\n"
+    L_CC = " <b>By: </b>{Tag}\n\n"  
+    PM_BOT_MSG = ""
+    L_BOT_MSG = ""
+    L_LL_MSG = ""
 
     # ----- MIRROR -------
     M_TYPE = " <b>Type: </b>{Mimetype}\n"
@@ -177,17 +177,17 @@ class WZMLStyle:
 
     # def get_readable_message(): ---> bot_utilis.py
     ####--------OVERALL MSG HEADER----------
-    STATUS_NAME = "<b><pre>{Name}</pre></b>"
+    STATUS_NAME = "<b>POWERED-BY: @TEAMXPIRATES</b>"
 
     #####---------PROGRESSIVE STATUS-------
     BAR = "\n┃ {Bar}"
-    PROCESSED = "\n <b>Processed:</b> {Processed}"
-    STATUS = '\n <b>Status:</b> <a href="{Url}">{Status}</a>'
+    PROCESSED = "\n <b>Processed: {Processed}</b>"
+    STATUS = '\n <b>Status: {Status}</b>'
     ETA = " | <b>ETA:</b> {Eta}"
-    SPEED = "\n <b>Speed:</b> {Speed}"
+    SPEED = "\n <b>Speed: {Speed}</b>"
     ELAPSED = " | <b>Elapsed:</b> {Elapsed}"
-    ENGINE = "\n <b>Engine:</b> {Engine}"
-    STA_MODE = "\n <b>Mode:</b> {Mode}"
+    ENGINE = "\n <b>Engine: {Engine}</b> "
+    STA_MODE = "\n <b>Mode: {Mode}</b> "
     SEEDERS = "\n <b>Seeders:</b> {Seeders} | "
     LEECHERS = "<b>Leechers:</b> {Leechers}"
 
@@ -200,8 +200,8 @@ class WZMLStyle:
     SEED_ENGINE = "\n <b>Engine:</b> {Engine}"
 
     ####--------NON-PROGRESSIVE + NON SEEDING----------
-    STATUS_SIZE = "\n <b>Size: </b>{Size}"
-    NON_ENGINE = "\n <b>Engine:</b> {Engine}"
+    STATUS_SIZE = "\n <b>Size: {Size}</b>"
+    NON_ENGINE = "\n <b>Engine: {Engine}</b>"
 
     ####--------OVERALL MSG FOOTER----------
     USER = "\n <b>User:</b> <code>{User}</code> | "
@@ -210,19 +210,19 @@ class WZMLStyle:
     CANCEL = "\n {Cancel}\n\n"
 
     ####------FOOTER--------
-    FOOTER = "⌬ <b><i>Bot Stats</i></b>\n"
+    FOOTER = "♝ <b>Bot Stats</b>\n"
     TASKS = " <b>Tasks:</b> {Tasks}\n"
     BOT_TASKS = " <b>Tasks:</b> {Tasks}/{Ttask} | <b>AVL:</b> {Free}\n"
-    Cpu = " <b>CPU:</b> {cpu}% | "
-    FREE = "<b>FREE:</b> {free} [{free_p}%]"
-    Ram = "\n <b>RAM:</b> {ram}% | "
-    uptime = "<b>UPTIME:</b> {uptime}"
-    DL = "\n <b>DL:</b> {DL}/s | "
-    UL = "<b>UL:</b> {UL}/s"
+    Cpu = " <b>CPU: {cpu}% | </b>"
+    FREE = "<b>FREE:</b> {free}"
+    Ram = "\n <b>RAM: {ram}% | </b>"
+    uptime = "<b>UPTIME: {uptime}</b>"
+    DL = ""
+    UL = ""
 
     ###--------BUTTONS-------
     PREVIOUS = "⫷"
-    REFRESH = "ᴘᴀɢᴇs\n{Page}"
+    REFRESH = "RERESH\n{Page}"
     NEXT = "⫸"
     # ---------------------
 
