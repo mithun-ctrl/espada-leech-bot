@@ -179,11 +179,11 @@ class WZMLStyle:
     ####--------OVERALL MSG HEADER----------
     STATUS_NAME = ""
 
-    STATUS = '\n<b> {Status}</b>'
+    STATUS = '\n <b>{Status}</b>'
     BAR = "\n {Bar}"
     PROCESSED = "\n <b>Processed: {Processed}</b>"
-    SPEED = "\n <b>Speed:</b> {Speed}"
-    ETA = " | <b>ETA:</b> {Eta}"
+    SPEED = "\n <b>Speed:</b> {Speed} | "
+    ETA = "<b>ETA:</b> {Eta}"
     ELAPSED = "\n <b>Elapsed:</b> {Elapsed}"
     ENGINE = "\n <b>Engine:</b> {Engine}"
     SEEDERS = "\n <b>Seeders:</b> {Seeders} | "
@@ -191,11 +191,11 @@ class WZMLStyle:
     STA_MODE = ""
 
     ####--------SEEDING----------
-    SEED_SIZE = "\n <b>Size: </b>{Size}"
-    SEED_SPEED = "\n <b>Speed: </b> {Speed} | "
-    UPLOADED = "<b>Uploaded: </b> {Upload}"
-    RATIO = "\n <b>Ratio: </b> {Ratio} | "
-    TIME = "<b>Time: </b> {Time}"
+    SEED_SIZE = "\n <b>Size:</b> {Size}"
+    SEED_SPEED = "\n <b>Speed:</b> {Speed} | "
+    UPLOADED = " <b>Uploaded:</b> {Upload}"
+    RATIO = "\n <b>Ratio:</b> {Ratio} | "
+    TIME = "<b>Time:</b> {Time}"
     SEED_ENGINE = "\n <b>Engine:</b> {Engine}"
 
     ####--------NON-PROGRESSIVE + NON SEEDING----------
@@ -214,14 +214,14 @@ class WZMLStyle:
     BOT_TASKS = " <b>Tasks:</b> {Tasks}/{Ttask} | <b>AVL:</b> {Free}\n"
     Cpu = "\n <b>CPU:</b> {cpu}% | "
     FREE = "<b>FREE:</b> {free}"
-    Ram = "\n <b>RAM:</b> {ram}% |"
+    Ram = "\n <b>RAM:</b> {ram}% | "
     uptime = "<b>UPTIME:</b> {uptime}"
     DL = ""
     UL = ""
 
     ###--------BUTTONS-------
     PREVIOUS = "⫷"
-    REFRESH = "RERESH\n{Page}"
+    REFRESH = "REFRESH\n{Page}"
     NEXT = "⫸"
     # ---------------------
 
