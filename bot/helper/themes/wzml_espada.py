@@ -206,7 +206,7 @@ class WZMLStyle:
     USER = "\n <b>User:</b> {User} | "
     ID = "<code>{Id}</code>"
     BTSEL = "\n <b>Select:</b> {Btsel}"
-    CANCEL = "\n {Cancel}\n\n"
+    CANCEL = "\n {Cancel}\n"
 
     ####------FOOTER--------
     FOOTER = ""
