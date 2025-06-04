@@ -96,12 +96,13 @@ if len(BOT_TOKEN) == 0:
 bot_id = BOT_TOKEN.split(":", 1)[0]
 
 DATABASE_URL = environ.get("DATABASE_URL", "")
+DB_NAME = environ.get("DB_NAME", "chihiro")
 if len(DATABASE_URL) == 0:
     DATABASE_URL = ""
 
 if DATABASE_URL:
     conn = MongoClient(DATABASE_URL)
-    db = conn.wzmlx
+    db = conn[DB_NAME]
     current_config = dict(dotenv_values("config.env"))
     old_config = db.settings.deployConfig.find_one({"_id": bot_id})
     if old_config is None:
@@ -545,23 +546,23 @@ IMG_PAGE = int(IMG_PAGE) if IMG_PAGE.isdigit() else ""
 
 AUTHOR_NAME = environ.get("AUTHOR_NAME", "")
 if len(AUTHOR_NAME) == 0:
-    AUTHOR_NAME = "WZML-X"
+    AUTHOR_NAME = "𝐂𝐡𝐢𝐡𝐢𝐫𝐨"
 
 AUTHOR_URL = environ.get("AUTHOR_URL", "")
 if len(AUTHOR_URL) == 0:
-    AUTHOR_URL = "https://t.me/WZML_X"
+    AUTHOR_URL = "https://t.me/chihirr0"
 
 TITLE_NAME = environ.get("TITLE_NAME", "")
 if len(TITLE_NAME) == 0:
-    TITLE_NAME = "WZ-M/L-X"
+    TITLE_NAME = "CHIHIRO/X"
 
 COVER_IMAGE = environ.get("COVER_IMAGE", "")
 if len(COVER_IMAGE) == 0:
-    COVER_IMAGE = "https://graph.org/file/60f9f8bcb97d27f76f5c0.jpg"
+    COVER_IMAGE = "https://jpcdn.it/img/small/81515848e82c3d79ac33ceca8261a14e.jpg"
 
 GD_INFO = environ.get("GD_INFO", "")
 if len(GD_INFO) == 0:
-    GD_INFO = "Uploaded by WZML-X"
+    GD_INFO = "Uploaded by 𝐂𝐡𝐢𝐡𝐢𝐫𝐨"
 
 SAVE_MSG = environ.get("SAVE_MSG", "")
 SAVE_MSG = SAVE_MSG.lower() == "true"
@@ -650,6 +651,7 @@ config_dict = {
     "CAP_FONT": CAP_FONT,
     "CMD_SUFFIX": CMD_SUFFIX,
     "DATABASE_URL": DATABASE_URL,
+    "DB_NAME": DB_NAME,
     "REAL_DEBRID_API": REAL_DEBRID_API,
     "DEBRID_LINK_API": DEBRID_LINK_API,
     "FILELION_API": FILELION_API,

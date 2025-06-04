@@ -7,6 +7,7 @@ from dotenv import dotenv_values
 
 from bot import (
     DATABASE_URL,
+    DB_NAME,
     user_data,
     rss_dict,
     LOGGER,
@@ -29,7 +30,7 @@ class DbManger:
         try:
             self.__conn = AsyncIOMotorClient(DATABASE_URL)
             self.__db = (
-                self.__conn.wzmlx
+                self.__conn[DB_NAME]
             )  # New Section for not conflicting with mltb section !!
         except PyMongoError as e:
             LOGGER.error(f"Error in DB connection: {e}")
