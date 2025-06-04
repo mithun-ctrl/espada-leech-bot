@@ -44,10 +44,13 @@ if len(BOT_TOKEN) == 0:
 bot_id = BOT_TOKEN.split(":", 1)[0]
 
 DATABASE_URL = environ.get("DATABASE_URL", "")
-DB_NAME = environ.get("DB_NAME") 
 if len(DATABASE_URL) == 0:
     DATABASE_URL = None
-
+    
+DB_NAME = environ.get("DB_NAME") 
+if len(DB_NAME) == 0:
+    DB_NAME = "chihiro"
+    
 if DATABASE_URL is not None:
     conn = MongoClient(DATABASE_URL)
     db = conn[DB_NAME]
