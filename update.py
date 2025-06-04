@@ -44,12 +44,13 @@ if len(BOT_TOKEN) == 0:
 bot_id = BOT_TOKEN.split(":", 1)[0]
 
 DATABASE_URL = environ.get("DATABASE_URL", "")
+DB_NAME = environ.get("DB_NAME") 
 if len(DATABASE_URL) == 0:
     DATABASE_URL = None
 
 if DATABASE_URL is not None:
     conn = MongoClient(DATABASE_URL)
-    db = conn.wzmlx
+    db = conn[DB_NAME]
     old_config = db.settings.deployConfig.find_one({"_id": bot_id})
     config_dict = db.settings.config.find_one({"_id": bot_id})
     if old_config is not None:
