@@ -2,13 +2,12 @@
 class WZMLStyle:
     # ----------------------
     # async def start(client, message) ---> __main__.py
-    ST_BN1_NAME = "Mirror Leech Group"
-    ST_BN1_URL = "https://t.me/mirror_leech_group_espada"
-    ST_BN2_NAME = "Support"
-    ST_BN2_URL = "https://t.me/espadaSupport"
-    ST_MSG = """<i>This bot can mirror & leech all your links, files, torrents & direct telegram file.</i>
-<b>Use {help_command} to get list of available commands</b>"""
-    ST_BOTPM = """<i>Now, This bot will send all your files and links here. Start Using ...</i>"""
+    ST_BN1_NAME = "Our Channel's"
+    ST_BN1_URL = "https://t.me/teamxpirates/25"
+    ST_BN2_NAME = "Need Help"
+    ST_BN2_URL = "https://t.me/chihiro_assistant_bot"
+    ST_MSG = """<i>Chihiro Leech Bot is private bot @TeamXPirates</i>"""
+    ST_BOTPM = """<i>Chihiro Leech Bot is private bot @TeamXPirates</i>"""
     ST_UNAUTH = """<i>You Are not authorized user!</i>"""
     OWN_TOKEN_GENERATE = (
         """<b>Temporary Token is not yours!</b>\n\n<i>Kindly generate your own.</i>"""

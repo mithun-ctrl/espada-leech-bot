@@ -59,19 +59,19 @@ desp_dict = {
     ],
     "lprefix": [
         "Leech Filename Prefix is the Front Part attacted with the Filename of the Leech Files.",
-        'Send Leech Filename Prefix. Documentation Here : <a href="https://t.me/WZML_X/77">Click Me</a> \n<b>Timeout:</b> 60 sec',
+        'Send Leech Filename Prefix. Documentation Here : <a href="https://t.me/espada_org/35">Click Me</a> \n<b>Timeout:</b> 60 sec',
     ],
     "lsuffix": [
         "Leech Filename Suffix is the End Part attached with the Filename of the Leech Files",
-        'Send Leech Filename Suffix. Documentation Here : <a href="https://t.me/WZML_X/77">Click Me</a> \n<b>Timeout:</b> 60 sec',
+        'Send Leech Filename Suffix. Documentation Here : <a href="https://t.me/espada_org/35">Click Me</a> \n<b>Timeout:</b> 60 sec',
     ],
     "lremname": [
         "Leech Filename Remname is combination of Regex(s) used for removing or manipulating Filename of the Leech Files",
-        'Send Leech Filename Remname. Documentation Here : <a href="https://t.me/WZML_X/77">Click Me</a> \n<b>Timeout:</b> 60 sec',
+        'Send Leech Filename Remname. Documentation Here : <a href="https://t.me/espada_org/35">Click Me</a> \n<b>Timeout:</b> 60 sec',
     ],
     "lcaption": [
         "Leech Caption is the Custom Caption on the Leech Files Uploaded by the bot",
-        'Send Leech Caption. You can add HTML tags. Documentation Here : <a href="https://t.me/WZML_X/77">Click Me</a> \n<b>Timeout:</b> 60 sec',
+        'Send Leech Caption. You can add HTML tags. Documentation Here : <a href="https://t.me/espada_org/35">Click Me</a> \n<b>Timeout:</b> 60 sec',
     ],
     "ldump": [
         "Leech Files User Dump for Personal Use as a Storage.",
@@ -179,18 +179,18 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         button = buttons.build_menu(1)
     elif key == "universal":
         ytopt = (
-            "Not Exists"
+            "Not Set"
             if (val := user_dict.get("yt_opt", config_dict.get("YT_DLP_OPTIONS", "")))
             == ""
             else val
         )
         buttons.ibutton(
-            f"{'✅️' if ytopt != 'Not Exists' else ''} YT-DLP Options",
+            f"{'✅️' if ytopt != 'Not Set' else ''} YT-DLP Options",
             f"userset {user_id} yt_opt",
         )
-        u_sess = "Exists" if user_dict.get("usess", False) else "Not Exists"
+        u_sess = "Set" if user_dict.get("usess", False) else "Not Set"
         buttons.ibutton(
-            f"{'✅️' if u_sess != 'Not Exists' else ''} User Session",
+            f"{'✅️' if u_sess != 'Not Set' else ''} User Session",
             f"userset {user_id} usess",
         )
         bot_pm = (
@@ -249,7 +249,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         button = buttons.build_menu(2)
     elif key == "mirror":
         buttons.ibutton("RClone", f"userset {user_id} rcc")
-        rccmsg = "Exists" if await aiopath.exists(rclone_path) else "Not Exists"
+        rccmsg = "Set" if await aiopath.exists(rclone_path) else "Not Set"
         dailytlup = (
             get_readable_file_size(config_dict["DAILY_MIRROR_LIMIT"] * 1024**3)
             if config_dict["DAILY_MIRROR_LIMIT"]
@@ -262,7 +262,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         )
         buttons.ibutton("Mirror Prefix", f"userset {user_id} mprefix")
         mprefix = (
-            "Not Exists"
+            "Not Set"
             if (
                 val := user_dict.get(
                     "mprefix", config_dict.get("MIRROR_FILENAME_PREFIX", "")
@@ -274,7 +274,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
 
         buttons.ibutton("Mirror Suffix", f"userset {user_id} msuffix")
         msuffix = (
-            "Not Exists"
+            "Not Set"
             if (
                 val := user_dict.get(
                     "msuffix", config_dict.get("MIRROR_FILENAME_SUFFIX", "")
@@ -286,7 +286,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
 
         buttons.ibutton("Mirror Remname", f"userset {user_id} mremname")
         mremname = (
-            "Not Exists"
+            "Not Set"
             if (
                 val := user_dict.get(
                     "mremname", config_dict.get("MIRROR_FILENAME_REMNAME", "")
@@ -345,9 +345,9 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             else "∞"
         )
 
-        thumbmsg = "Exists" if await aiopath.exists(thumbpath) else "Not Exists"
+        thumbmsg = "Set" if await aiopath.exists(thumbpath) else "Not Set"
         buttons.ibutton(
-            f"{'✅️' if thumbmsg == 'Exists' else ''} Thumbnail",
+            f"{'✅️' if thumbmsg == 'Set' else ''} Thumbnail",
             f"userset {user_id} thumb",
         )
 
@@ -372,7 +372,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         )
 
         lcaption = (
-            "Not Exists"
+            "Not Set"
             if (
                 val := user_dict.get(
                     "lcaption", config_dict.get("LEECH_FILENAME_CAPTION", "")
@@ -382,12 +382,12 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             else val
         )
         buttons.ibutton(
-            f"{'✅️' if lcaption != 'Not Exists' else ''} Leech Caption",
+            f"{'✅️' if lcaption != 'Not Set' else ''} Leech Caption",
             f"userset {user_id} lcaption",
         )
 
         lprefix = (
-            "Not Exists"
+            "Not Set"
             if (
                 val := user_dict.get(
                     "lprefix", config_dict.get("LEECH_FILENAME_PREFIX", "")
@@ -397,12 +397,12 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             else val
         )
         buttons.ibutton(
-            f"{'✅️' if lprefix != 'Not Exists' else ''} Leech Prefix",
+            f"{'✅️' if lprefix != 'Not Set' else ''} Leech Prefix",
             f"userset {user_id} lprefix",
         )
 
         lsuffix = (
-            "Not Exists"
+            "Not Set"
             if (
                 val := user_dict.get(
                     "lsuffix", config_dict.get("LEECH_FILENAME_SUFFIX", "")
@@ -412,12 +412,12 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             else val
         )
         buttons.ibutton(
-            f"{'✅️' if lsuffix != 'Not Exists' else ''} Leech Suffix",
+            f"{'✅️' if lsuffix != 'Not Set' else ''} Leech Suffix",
             f"userset {user_id} lsuffix",
         )
 
         lremname = (
-            "Not Exists"
+            "Not Set"
             if (
                 val := user_dict.get(
                     "lremname", config_dict.get("LEECH_FILENAME_REMNAME", "")
@@ -427,20 +427,20 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             else val
         )
         buttons.ibutton(
-            f"{'✅️' if lremname != 'Not Exists' else ''} Leech Remname",
+            f"{'✅️' if lremname != 'Not Set' else ''} Leech Remname",
             f"userset {user_id} lremname",
         )
 
         buttons.ibutton("Leech Dump", f"userset {user_id} ldump")
-        ldump = "Not Exists" if (val := user_dict.get("ldump", "")) == "" else len(val)
+        ldump = "Not Set" if (val := user_dict.get("ldump", "")) == "" else len(val)
 
         lmeta = (
-            "Not Exists"
+            "Not Set"
             if (val := user_dict.get("lmeta", config_dict.get("METADATA", ""))) == ""
             else val
         )
         buttons.ibutton(
-            f"{'✅️' if lmeta != 'Not Exists' else ''} Metadata",
+            f"{'✅️' if lmeta != 'Not Set' else ''} Metadata",
             f"userset {user_id} lmeta",
         )
 
@@ -488,13 +488,13 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         text = f"㊂ <b><u>{fname_dict[key]} Settings :</u></b>\n\n"
         if key == "rcc":
             set_exist = await aiopath.exists(rclone_path)
-            text += f"➲ <b>RClone.Conf File :</b> <i>{'' if set_exist else 'Not'} Exists</i>\n\n"
+            text += f"➲ <b>RClone.Conf File :</b> <i>{'' if set_exist else 'Not'} Set</i>\n\n"
         elif key == "thumb":
             set_exist = await aiopath.exists(thumbpath)
-            text += f"➲ <b>Custom Thumbnail :</b> <i>{'' if set_exist else 'Not'} Exists</i>\n\n"
+            text += f"➲ <b>Custom Thumbnail :</b> <i>{'' if set_exist else 'Not'} Set</i>\n\n"
         elif key == "yt_opt":
             set_exist = (
-                "Not Exists"
+                "Not Set"
                 if (
                     val := user_dict.get(
                         "yt_opt", config_dict.get("YT_DLP_OPTIONS", "")
@@ -505,7 +505,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             )
             text += f"➲ <b>YT-DLP Options :</b> <code>{escape(set_exist)}</code>\n\n"
         elif key == "usess":
-            set_exist = "Exists" if user_dict.get("usess") else "Not Exists"
+            set_exist = "Set" if user_dict.get("usess") else "Not Set"
             text += f"➲ <b>{fname_dict[key]} :</b> <code>{set_exist}</code>\n➲ <b>Encryption :</b> {'🔐' if set_exist else '🔓'}\n\n"
         elif key == "split_size":
             set_exist = (
@@ -536,7 +536,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
                 )
         elif key in ["lprefix", "lremname", "lsuffix", "lcaption", "ldump", "lmeta"]:
             set_exist = (
-                "Not Exists"
+                "Not Set"
                 if (
                     val := user_dict.get(
                         key, config_dict.get(f"LEECH_FILENAME_{key[1:].upper()}", "")
@@ -545,7 +545,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
                 == ""
                 else val
             )
-            if set_exist != "Not Exists" and key == "ldump":
+            if set_exist != "Not Set" and key == "ldump":
                 set_exist = "\n\n" + "\n".join(
                     [
                         f"{index}. <b>{dump}</b> : <code>{ids}</code>"
@@ -555,7 +555,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             text += f"➲ <b>Leech Filename {fname_dict[key]} :</b> {set_exist}\n\n"
         elif key in ["mprefix", "mremname", "msuffix"]:
             set_exist = (
-                "Not Exists"
+                "Not Set"
                 if (
                     val := user_dict.get(
                         key, config_dict.get(f"MIRROR_FILENAME_{key[1:].upper()}", "")
@@ -567,11 +567,11 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             text += f"➲ <b>Mirror Filename {fname_dict[key]} :</b> {set_exist}\n\n"
         elif key in ["gofile", "streamtape"]:
             set_exist = (
-                "Exists"
+                "Set"
                 if key in (ddl_dict := user_dict.get("ddl_servers", {}))
                 and ddl_dict[key][1]
                 and ddl_dict[key][1] != ""
-                else "Not Exists"
+                else "Not Set"
             )
             ddl_mode = (
                 "Enabled"
@@ -589,7 +589,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
                 "header",
             )
         elif key == "user_tds":
-            set_exist = len(val) if (val := user_dict.get(key, False)) else "Not Exists"
+            set_exist = len(val) if (val := user_dict.get(key, False)) else "Not Set"
             tds_mode = "Enabled" if user_dict.get("td_mode", False) else "Disabled"
             buttons.ibutton(
                 "Disable UserTDs" if tds_mode == "Enabled" else "Enable UserTDs",
@@ -608,7 +608,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
                 (
                     f"Change {fname_dict[key]}"
                     if set_exist
-                    and set_exist != "Not Exists"
+                    and set_exist != "Not Set"
                     and (
                         set_exist
                         != get_readable_file_size(config_dict["LEECH_SPLIT_SIZE"])
@@ -623,7 +623,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             buttons.ibutton("Stop Change", f"userset {user_id} {key}")
         if (
             set_exist
-            and set_exist != "Not Exists"
+            and set_exist != "Not Set"
             and (
                 set_exist
                 != get_readable_file_size(config_dict["LEECH_SPLIT_SIZE"])
