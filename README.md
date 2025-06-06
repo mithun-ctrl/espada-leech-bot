@@ -1,7 +1,7 @@
 <p align="center">
-    <a href="https://github.com/mithun-ctrl/WZML">
+    <a href="https://github.com/mithun-ctrl">
         <kbd>
-            <img width="250" src="https://jpcdn.it/img/086a9ccf0966f2f45326deca866deae9.jpg" alt="ESPADA-X Logo">
+            <img width="250" src="https://jpcdn.it/img/086a9ccf0966f2f45326deca866deae9.jpg" alt="Chihiro-X Logo">
         </kbd>
     </a>
 
@@ -450,7 +450,7 @@ help - All cmds with description
     - `INCOMPLETE_TASK_NOTIFIER`: Get incomplete task messages after restart. Require database and superGroup. Default is `False`. `Bool`
     - `SET_COMMANDS`: Automatically set the Bot Commands no need to set from `@botfather`. Default is `False`. `Bool`
     - `EXTENSION_FILTER`: File extensions that won't upload/clone. Separate them by space. No need to add `.` `Str`
-    - `YT_DLP_OPTIONS`: Default yt-dlp options. Check all possible options [HERE](https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py#L184) or use this [script](https://t.me/mltb_official/177) to convert cli arguments to api options. Format: key:value|key:value|key:value. Add `^` before integer or float, some numbers must be numeric and some string. `str`
+    - `YT_DLP_OPTIONS`: Default yt-dlp options. Check all possible options [HERE](https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/YoutubeDL.py#L184) to convert cli arguments to api options. Format: key:value|key:value|key:value. Add `^` before integer or float, some numbers must be numeric and some string. `str`
       - Example: "format:bv*+mergeall[vcodec=none]|nocheckcertificate:True"
     - `FSUB_IDS`: Fill chat_id(-100xxxxxx) of groups/channel you want to force subscribe. Separate them by space. Int
       - Note: Bot should be added in the filled chat_id as admin
@@ -935,7 +935,7 @@ button_name button_url
 Example:
 ```
 Repo_❤️ https://github.com/espada-leech-bot 
-Updates https://t.me/WZML_X
+Updates https://t.me/espadaSupport
 ```
 - **Note**: If you want to add space in button name use `_` for add space
 
@@ -975,19 +975,6 @@ machine example.workers.dev password index_password
 ```
 
 Where host is the name of extractor (eg. instagram, Twitch). Multiple accounts of different hosts can be added each separated by a new line.
-
-</details>
-    
------
-
-## 🏅 **Bot Authors**
-<details>
-    <summary><b>Click Here For Description</b></summary>
-
-|<img width="80" src="https://avatars.githubusercontent.com/u/105407900">|<img width="80" src="https://avatars.githubusercontent.com/u/113664541">|<img width="80" src="https://avatars.githubusercontent.com/u/84721324">|
-|:---:|:---:|:---:|
-|[`SilentDemonSD`](https://github.com/SilentDemonSD)|[`CodeWithWeeb`](https://github.com/mithun-ctrl)|[`Maverick`](https://github.com/MajnuRangeela)|
-|Author and DDL, UI Design, More Customs..|Author and Wraps Up Features|Co-Author & Bug Tester|
 
 </details>
 
