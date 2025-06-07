@@ -21,22 +21,15 @@ class ButtonMaker:
         elif position == "footer":
             self.__footer_button.append(InlineKeyboardButton(text=key, url=link))
 
-    def ibutton(self, key, data=None, position=None):
-        """Add button(s). Can handle single button or list of button pairs."""
+    def ibutton(self, *args, position=None):
         buttons_to_add = []
+        if len(args) == 2 and isinstance(args[0], str) and isinstance(args[1], str):
+            text, callback_data = args
+            buttons_to_add = [InlineKeyboardButton(text=text, callback_data=callback_data)]
+        elif len(args) >= 1 and all(isinstance(arg, (list, tuple)) and len(arg) == 2 for arg in args):
+            for text, callback_data in args:
+                buttons_to_add.append(InlineKeyboardButton(text=text, callback_data=callback_data))
         
-        # Handle single button
-        if isinstance(key, str) and data is not None:
-            buttons_to_add = [InlineKeyboardButton(text=key, callback_data=data)]
-        
-        # Handle multiple buttons (list of [text, callback_data] pairs)
-        elif isinstance(key, list) and data is None:
-            for item in key:
-                if isinstance(item, (list, tuple)) and len(item) == 2:
-                    text, callback_data = item
-                    buttons_to_add.append(InlineKeyboardButton(text=text, callback_data=callback_data))
-        
-        # Add buttons to appropriate position
         if not position:
             self.__button.extend(buttons_to_add)
         elif position == "header":
