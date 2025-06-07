@@ -21,25 +21,25 @@ class ButtonMaker:
         elif position == "footer":
             self.__footer_button.append(InlineKeyboardButton(text=key, url=link))
 
-    def ibutton(self, *args, position=None):
-        buttons_to_add = []
-        if len(args) == 2 and isinstance(args[0], str) and isinstance(args[1], str):
-            text, callback_data = args
-            buttons_to_add = [InlineKeyboardButton(text=text, callback_data=callback_data)]
-        elif len(args) >= 1 and all(isinstance(arg, (list, tuple)) and len(arg) == 2 for arg in args):
-            for text, callback_data in args:
-                buttons_to_add.append(InlineKeyboardButton(text=text, callback_data=callback_data))
-        
+    def ibutton(self, key, data, position=None):
         if not position:
-            self.__button.extend(buttons_to_add)
+            self.__button.append(InlineKeyboardButton(text=key, callback_data=data))
         elif position == "header":
-            self.__header_button.extend(buttons_to_add)
+            self.__header_button.append(
+                InlineKeyboardButton(text=key, callback_data=data)
+            )
         elif position == "f_body":
-            self.__first_body_button.extend(buttons_to_add)
+            self.__first_body_button.append(
+                InlineKeyboardButton(text=key, callback_data=data)
+            )
         elif position == "l_body":
-            self.__last_body_button.extend(buttons_to_add)
+            self.__last_body_button.append(
+                InlineKeyboardButton(text=key, callback_data=data)
+            )
         elif position == "footer":
-            self.__footer_button.extend(buttons_to_add)
+            self.__footer_button.append(
+                InlineKeyboardButton(text=key, callback_data=data)
+            )
 
     def build_menu(self, b_cols=1, h_cols=8, fb_cols=2, lb_cols=2, f_cols=8):
         menu = [

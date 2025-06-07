@@ -156,16 +156,15 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
     rclone_path = f"rclone/{user_id}.conf"
     user_dict = user_data.get(user_id, {})
     if key is None:
-        buttons.ibutton(
-            ["𝚄𝚗𝚒𝚟𝚎𝚛𝚜𝚊𝚕 𝚂𝚎𝚝𝚝𝚒𝚗𝚐𝚜", f"userset {user_id} universal"],
-            ["𝙼𝚒𝚛𝚛𝚘𝚛 𝚂𝚎𝚝𝚝𝚒𝚗𝚐𝚜", f"userset {user_id} mirror"]
-        )
-        buttons.ibutton(
-            ["𝙻𝚎𝚎𝚌𝚑 𝚂𝚎𝚝𝚝𝚒𝚗𝚐𝚜", f"userset {user_id} leech"],
-            ["𝙲𝚕𝚘𝚜𝚎", f"userset {user_id} close"]
-        )
+        buttons.ibutton("𝚄𝚗𝚒𝚟𝚎𝚛𝚜𝚊𝚕 𝚂𝚎𝚝𝚝𝚒𝚗𝚐𝚜", f"userset {user_id} universal")
+        buttons.ibutton("𝙼𝚒𝚛𝚛𝚘𝚛 𝚂𝚎𝚝𝚝𝚒𝚗𝚐𝚜", f"userset {user_id} mirror")
+        buttons.ibutton("𝙻𝚎𝚎𝚌𝚑 𝚂𝚎𝚝𝚝𝚒𝚗𝚐𝚜", f"userset {user_id} leech")
+        buttons.ibutton("𝙲𝚕𝚘𝚜𝚎", f"userset {user_id} close")
+
         if user_dict and any(key in user_dict for key in list(fname_dict.keys())):
             buttons.ibutton("𝚁𝚎𝚜𝚎𝚝", f"userset {user_id} reset_all")
+        
+        keyboard = buttons.build_menu(b_cols=2)
 
         text = BotTheme(
             "USER_SETTING",
