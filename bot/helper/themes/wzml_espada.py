@@ -256,12 +256,12 @@ class WZMLStyle:
     # ---------------------
 
     # USER Setting --> user_setting.py
-    USER_SETTING = """㊂ <b><u>User Settings :</u></b>
+    USER_SETTING = """ <b>『 User Settings Panel 』</b>
         
-<b> Name :</b> {NAME} ( <code>{ID}</code> )
-<b> Username :</b> {USERNAME}
-<b> Telegram DC :</b> {DC}
-<b> Language :</b> {LANG}
+<b>👤 𝗡𝗮𝗺𝗲 :</b> {NAME}
+<b>🆔 𝗨𝘀𝗲𝗿𝗻𝗮𝗺𝗲 :</b> {USERNAME}
+<b>🌐 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗗𝗖 :</b> {DC}
+<b>🈯 𝗟𝗮𝗻𝗴𝘂𝗮𝗴𝗲 :</b> {LANG}
 
 ➲ <u><b>Available Args:</b></u>
 • <b>-s</b> or <b>-set</b>: Set Directly via Arg"""
