@@ -164,7 +164,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         if user_dict and any(key in user_dict for key in list(fname_dict.keys())):
             buttons.ibutton("𝚁𝚎𝚜𝚎𝚝", f"userset {user_id} reset_all")
         
-        keyboard = buttons.build_menu(b_cols=2)
+        
 
         text = BotTheme(
             "USER_SETTING",
@@ -179,7 +179,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             DC=from_user.dc_id,
         )
 
-        button = buttons.build_menu(1)
+        button = buttons.build_menu(2)
     elif key == "universal":
         ytopt = (
             "Not Set"
