@@ -21,25 +21,32 @@ class ButtonMaker:
         elif position == "footer":
             self.__footer_button.append(InlineKeyboardButton(text=key, url=link))
 
-    def ibutton(self, key, data, position=None):
+    def ibutton(self, key, data=None, position=None):
+        """Add button(s). Can handle single button or list of button pairs."""
+        buttons_to_add = []
+        
+        # Handle single button
+        if isinstance(key, str) and data is not None:
+            buttons_to_add = [InlineKeyboardButton(text=key, callback_data=data)]
+        
+        # Handle multiple buttons (list of [text, callback_data] pairs)
+        elif isinstance(key, list) and data is None:
+            for item in key:
+                if isinstance(item, (list, tuple)) and len(item) == 2:
+                    text, callback_data = item
+                    buttons_to_add.append(InlineKeyboardButton(text=text, callback_data=callback_data))
+        
+        # Add buttons to appropriate position
         if not position:
-            self.__button.append(InlineKeyboardButton(text=key, callback_data=data))
+            self.__button.extend(buttons_to_add)
         elif position == "header":
-            self.__header_button.append(
-                InlineKeyboardButton(text=key, callback_data=data)
-            )
+            self.__header_button.extend(buttons_to_add)
         elif position == "f_body":
-            self.__first_body_button.append(
-                InlineKeyboardButton(text=key, callback_data=data)
-            )
+            self.__first_body_button.extend(buttons_to_add)
         elif position == "l_body":
-            self.__last_body_button.append(
-                InlineKeyboardButton(text=key, callback_data=data)
-            )
+            self.__last_body_button.extend(buttons_to_add)
         elif position == "footer":
-            self.__footer_button.append(
-                InlineKeyboardButton(text=key, callback_data=data)
-            )
+            self.__footer_button.extend(buttons_to_add)
 
     def build_menu(self, b_cols=1, h_cols=8, fb_cols=2, lb_cols=2, f_cols=8):
         menu = [
